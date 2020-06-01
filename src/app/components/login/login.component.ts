@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginCredentials } from '../../models/LoginCredentials'
 
 @Component({
   selector: 'app-login',
@@ -11,12 +12,14 @@ export class LoginComponent implements OnInit {
 
   password:string = '';
 
-  updateUsername() {
-    
+  loginModel = new LoginCredentials(this.username, this.password)
+
+  updateUsername(value: string) {
+    this.username = value;
   }
 
-  updatePassword() {
-    
+  updatePassword(value: string) {
+    this.password = value;
   }
 
   constructor() { }
