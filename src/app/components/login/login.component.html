@@ -1,4 +1,4 @@
-<form class="p-3">
+<form #loginFields class="p-3">
     <div class="form-column">
         <div class="form-group mx-auto col-md-4 col-lg-3">
           <label for="inputUsername">Username</label>
@@ -6,8 +6,9 @@
           type="text" 
           class="form-control" 
           id="inputUsername"
-          #usernameInput
+          [(ngModel)]="loginModel.username"
           (onkeyup)="updateUsername($event)"
+          name="username"
           >
         </div>
         <div class="form-group mx-auto col-md-4 col-lg-3">
@@ -16,8 +17,9 @@
           type="password" 
           class="form-control" 
           id="inputPassword"
-          #passwordInput
+          [(ngModel)]="loginModel.password"
           (onkeyup)="updatePassword($event)"
+          name="password"
           >
         </div>
         <div class="text-center">
