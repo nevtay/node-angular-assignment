@@ -1,0 +1,41 @@
+<form #reportFields class="p-3" #reportForm="ngForm">
+    <div class="form-column container-sm">
+
+        <div class="form-group mx-auto col-sm-6 col-md-5">
+          <label for="formDate" class="col-form-label">Date</label>
+          <input 
+          required
+          type="date" 
+          class="form-control" 
+          id="form-date"
+          name="formDate"
+          >
+        </div>
+
+        <div class="form-group mx-auto col-sm-6 col-md-5">
+          <label for="formAuthor" class="col-form-label">Username</label>
+          <input 
+          required
+          type="text" 
+          class="form-control" 
+          id="form-username"
+          name="formAuthor"
+          >
+        </div>
+
+        <div class="form-group mx-auto col-sm-6 col-md-5">
+          <label for="formContent" class="col-form-label">Report Content</label>
+          <textarea 
+          class="form-control" 
+          id="form-content"
+          name="formContent"
+          rows="7"
+          ></textarea>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit Report</button>
+      </div>
+
+    </div>
+</form>
