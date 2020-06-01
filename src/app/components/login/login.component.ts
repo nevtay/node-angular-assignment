@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginCredentials } from '../../models/LoginCredentials'
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,10 @@ export class LoginComponent implements OnInit {
 
   updatePassword(value: string) {
     this.password = value;
+  }
+
+  attemptLogin(f: NgForm) {
+    console.log(f.value)
   }
 
   constructor() { }
