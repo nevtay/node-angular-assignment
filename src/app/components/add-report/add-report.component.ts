@@ -11,7 +11,8 @@ export class AddReportComponent implements OnInit {
   reportDate:string = ''
   reportAuthor:string = ''
   reportContent:string = ''
-  reportModel = new Report(this.reportDate, this.reportAuthor, this.reportContent)
+  reportIsApproved:boolean = false
+  reportModel = new Report(this.reportDate, this.reportAuthor, this.reportContent, this.reportIsApproved)
 
   constructor() { }
 
