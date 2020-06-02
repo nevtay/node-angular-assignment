@@ -8,11 +8,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   username:string = '';
-
   password:string = '';
-
   loginModel = new LoginCredentials(this.username, this.password)
 
   updateUsername(value: string) {
