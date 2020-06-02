@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AddReportComponent } from './components/add-report/add-report.component';
+import { ViewReportsComponent } from './components/view-reports/view-reports.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HeaderComponent,
-    AddReportComponent
+    AddReportComponent,
+    ViewReportsComponent
   ],
   imports: [
     BrowserModule,
