@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Report } from '../models/Report'
+import { REPORTS } from '../models/Reports'
 
 @Injectable({
   providedIn: 'root',
@@ -7,5 +8,9 @@ import { Report } from '../models/Report'
 export class ReportService {
 
   constructor() { }
+
+  getReports(): Report[] {
+      return REPORTS
+  }
 
 }
