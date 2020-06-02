@@ -1,35 +1,43 @@
-<form #reportFields class="p-3" #reportForm="ngForm">
+<form class="p-3" (ngSubmit)="submitReport(reportForm)" #reportForm="ngForm">
     <div class="form-column container-sm">
 
-        <div class="form-group mx-auto col-sm-6 col-md-5">
+        <div class="form-group mx-auto col-sm-7 col-md-5">
           <label for="formDate" class="col-form-label">Date</label>
           <input 
           required
           type="date" 
           class="form-control" 
           id="form-date"
+          [(ngModel)]="reportModel.date"
+          (onkeyup)="updateDate($event)"
           name="formDate"
           >
         </div>
 
-        <div class="form-group mx-auto col-sm-6 col-md-5">
+        <div class="form-group mx-auto col-sm-7 col-md-5">
           <label for="formAuthor" class="col-form-label">Username</label>
           <input 
           required
           type="text" 
           class="form-control" 
           id="form-username"
+          [(ngModel)]="reportModel.username"
+          (onkeyup)="updateUsername($event)"
           name="formAuthor"
           >
         </div>
 
-        <div class="form-group mx-auto col-sm-6 col-md-5">
+        <div class="form-group mx-auto col-sm-7 col-md-5">
           <label for="formContent" class="col-form-label">Report Content</label>
           <textarea 
           class="form-control" 
           id="form-content"
+          [(ngModel)]="reportModel.content"
+          (onkeyup)="updateContent($event)"
           name="formContent"
           rows="7"
+          placeholder="Enter Report Content..."
+          [value]="reportContent"
           ></textarea>
         </div>
 
