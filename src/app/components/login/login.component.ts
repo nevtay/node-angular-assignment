@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { LoginCredentials } from '../../models/LoginCredentials'
 import { NgForm } from '@angular/forms';
 
@@ -24,9 +25,15 @@ export class LoginComponent implements OnInit {
     console.log(f.value)
   }
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.username = params['username'];
+      this.password = params['password'];
+    });
   }
 
 }
