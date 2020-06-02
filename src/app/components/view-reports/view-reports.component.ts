@@ -20,7 +20,7 @@ export class ViewReportsComponent implements OnInit {
   ngOnInit() {
   }
   
-  toggleReportApproval() {
+  toggleReportEditing() {
     this.isReadOnly = !this.isReadOnly;
   }
 
