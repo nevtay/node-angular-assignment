@@ -1,7 +1,10 @@
 <div class="container col-sm-10 col-md-8 p-2">
     <h1>Reports</h1>
     <ul class="list-group">
-        <li class="list-group-item mb-3 p-4 border" *ngFor="let report of reports">       
+        <li 
+        class="list-group-item mb-3 p-4 border" 
+        *ngFor="let report of reports" 
+        (click)="onSelect(report)">       
             <article class="col mx-auto col-12">
                 <span style="display: flex; flex-flow: row-wrap; justify-content: space-between;">
                     <p class="text-left">Author: <strong>{{report.username}}</strong></p>
@@ -9,9 +12,36 @@
                 </span>
                 <details>
                     <summary aria-label="Toggle Content"></summary>
-                    <p class="p-1">Test content please ignore. Test content please ignore. Test content please ignore. Test content please ignore.</p>
+                    <p class="p-1">{{report.content}}</p>
                 </details>
+                <button class="btn btn-info mt-3" data-toggle="modal" 
+                data-target="#selectedReportModal">Edit/Approve Report</button>
             </article>
         </li>
     </ul>
+</div>
+
+<div
+*ngIf="selectedReport" 
+class="modal fade" 
+id="selectedReportModal" 
+tabindex="-1" 
+role="dialog" 
+aria-labelledby="selected-Report-Modal" 
+aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p>Author: <strong>{{selectedReport.username}}</strong></p>
+                <p>Added On: <strong>{{selectedReport.date}}</strong></p>
+            </div>
+            <div class="modal-body">
+                <textarea  class="w-100" [(ngModel)]="selectedReport.content" [readonly]="isReadOnly"></textarea>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <button class="btn btn-secondary" (click)="toggleReportApproval()">{{isReadOnly ? "Allow Edits" : "Disable Edits"}}</button>
+                <p>Approval Status: <strong>{{ selectedReport.isApproved ? 'Approved' : 'Not Approved' }}</strong></p>
+            </div>
+        </div>
+    </div>
 </div>
