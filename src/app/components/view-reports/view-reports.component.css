@@ -11,7 +11,7 @@ details[open] summary {
 }
 
 details[open] summary::after {
-    content: 'Read Less'
+    content: 'Close'
 }
 
 summary:focus {
