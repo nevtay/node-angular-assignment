@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Report } from '../../models/Report'
+import { REPORTS } from  '../../models/Reports'
 
 @Component({
   selector: 'app-view-reports',
@@ -7,11 +8,11 @@ import { Report } from '../../models/Report'
   styleUrls: ['./view-reports.component.css']
 })
 export class ViewReportsComponent implements OnInit {
-  reports: Report[] = []
+  reports = REPORTS;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
