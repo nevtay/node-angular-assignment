@@ -6,9 +6,9 @@ import { ViewReportsComponent } from './components/view-reports/view-reports.com
 
 
 const routes: Routes = [
+  {path: '', component: LoginComponent},
   {path: 'create-report', component: AddReportComponent},
   {path: 'view-reports', component: ViewReportsComponent},
-  {path: 'login', component: LoginComponent},
 ];
 
 @NgModule({
