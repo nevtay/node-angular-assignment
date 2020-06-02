@@ -1,33 +1,15 @@
-<div class="container col-8 p-3">
+<div class="container col-sm-10 col-md-8 p-2">
     <h1>Reports</h1>
-    <ul class="list-group border-1">
-        <li class="list-group-item">       
-            <article class=" col mx-auto col-12">
-                <h3>Date 1</h3>
-                <h4>Username 1</h4>
+    <ul class="list-group">
+        <li class="list-group-item mb-3 p-4 border" *ngFor="let report of reports">       
+            <article class="col mx-auto col-12">
+                <span style="display: flex; flex-flow: row-wrap; justify-content: space-between;">
+                    <p class="text-left">Author: <strong>{{report.username}}</strong></p>
+                    <p class="text-right">Date Published: <strong>{{report.date}}</strong></p>
+                </span>
                 <details>
-                    <summary></summary>
+                    <summary aria-label="Toggle Content"></summary>
                     <p>Test content please ignore. Test content please ignore. Test content please ignore. Test content please ignore.</p>
-                </details>
-            </article>
-        </li>
-        <li class="list-group-item">
-            <article  class="col mx-auto col-12">
-                <h3>Date 2</h3>
-                <h4>Username 2</h4>
-                <details>
-                    <summary></summary>
-                    <p>Test content please ignore. Test content please ignore. Test content please ignore. Test content please ignore. Test content please ignore.</p>
-                </details>
-            </article>
-        </li>
-        <li class="list-group-item">
-            <article  class="col mx-auto col-12">
-                <h3>Date 3</h3>
-                <h4>Username 3</h4>
-                <details>
-                    <summary></summary>
-                    <p>Test content please ignore. Test content please ignore. Test content please ignore. Test content please ignore. Test content please ignore. Test content please ignore. </p>
                 </details>
             </article>
         </li>
