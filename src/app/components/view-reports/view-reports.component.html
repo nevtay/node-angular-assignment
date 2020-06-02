@@ -39,7 +39,7 @@ aria-hidden="true">
                 <textarea  class="w-100" [(ngModel)]="selectedReport.content" [readonly]="isReadOnly"></textarea>
             </div>
             <div class="modal-footer d-flex justify-content-between">
-                <button class="btn btn-secondary" (click)="toggleReportApproval()">{{isReadOnly ? "Allow Edits" : "Disable Edits"}}</button>
+                <button class="btn btn-secondary" (click)="toggleReportEditing()">{{isReadOnly ? "Allow Edits" : "Disable Edits"}}</button>
                 <p>Approval Status: <strong>{{ selectedReport.isApproved ? 'Approved' : 'Not Approved' }}</strong></p>
             </div>
         </div>
