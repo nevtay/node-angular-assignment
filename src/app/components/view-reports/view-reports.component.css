@@ -1,0 +1,23 @@
+details > summary {
+    padding: 6px 12px;
+    border: none;
+    background: #e5e5e5;
+    transition: background 0.2s;
+}
+
+details[open] summary {
+    background: #d0d0d0;
+    transition: background 0.2s;
+}
+
+details[open] summary::after {
+    content: 'Read Less'
+}
+
+summary:focus {
+    outline: none;
+}
+
+summary::after {
+    content: 'Read More'
+}
