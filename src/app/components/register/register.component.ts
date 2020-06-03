@@ -1,38 +1,37 @@
-import { Component, OnInit } from '@angular/core';
-import { NewAccount } from '../../models/NewAccount';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { NewAccount } from "../../models/NewAccount";
+import { NgForm } from "@angular/forms";
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: "app-register",
+  templateUrl: "./register.component.html",
+  styleUrls: ["./register.component.css"]
 })
 export class RegisterComponent implements OnInit {
-  username:string = '';
-  password:string = '';
+  username:string = "";
+  password:string = "";
   isAdmin:boolean = false;
-  newAccountModel = new NewAccount(this.username, this.password, this.isAdmin)
+  newAccountModel = new NewAccount(this.username, this.password, this.isAdmin);
 
-  updateUsername(value: string) {
+  updateUsername (value: string) {
     this.username = value;
   }
 
-  updatePassword(value: string) {
+  updatePassword (value: string) {
     this.password = value;
   }
 
-  setAdminStatus() {
-    return !this.isAdmin
+  setAdminStatus () {
+    return !this.isAdmin;
   }
 
-  registerAccount(f: NgForm) {
-    console.log(f.value)
+  registerAccount (f: NgForm) {
+    console.log(f.value);
   }
 
-  constructor() { }
+  constructor () { }
 
-  ngOnInit() {
-    
+  ngOnInit () {
+
   }
-
 }
