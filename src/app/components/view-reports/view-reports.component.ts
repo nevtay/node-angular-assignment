@@ -13,15 +13,9 @@ export class ViewReportsComponent implements OnInit {
   reports = REPORTS;
   selectedReport: Report;
 
-  isReadOnly:boolean = true;
-
   constructor() { }
   
   ngOnInit() {
-  }
-  
-  toggleReportEditing() {
-    this.isReadOnly = !this.isReadOnly;
   }
 
   onSelect(report: Report): void {
