@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { AddReportComponent } from './components/add-report/add-report.component';
 import { ViewReportsComponent } from './components/view-reports/view-reports.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ReportDetailComponent } from './components/report-detail/report-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RegisterComponent } from './components/register/register.component';
     HeaderComponent,
     AddReportComponent,
     ViewReportsComponent,
-    RegisterComponent
+    RegisterComponent,
+    ReportDetailComponent
   ],
   imports: [
     BrowserModule,
