@@ -1,7 +1,7 @@
 export class NewAccount {
-    constructor(
+  constructor (
         public username:string,
         public password:string,
         public isAdmin:boolean
-    ) { }
+  ) { }
 }
