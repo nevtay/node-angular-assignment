@@ -1,7 +1,9 @@
+<div class="container col-sm-10 col-md-8 p-2">
+  <h1>Add New Report</h1>
 <form class="p-3" (ngSubmit)="submitReport(reportForm)" #reportForm="ngForm">
-    <div class="form-column container-sm">
+    <div class="form-column">
 
-        <div class="form-group mx-auto col-sm-7 col-md-5">
+        <div class="form-group mx-auto">
           <label for="formDate" class="col-form-label">Date</label>
           <input 
           required
@@ -14,7 +16,7 @@
           >
         </div>
 
-        <div class="form-group mx-auto col-sm-7 col-md-5">
+        <div class="form-group mx-auto">
           <label for="formAuthor" class="col-form-label">Username</label>
           <input 
           required
@@ -27,7 +29,7 @@
           >
         </div>
 
-        <div class="form-group mx-auto col-sm-7 col-md-5">
+        <div class="form-group mx-auto">
           <label for="formContent" class="col-form-label">Report Content</label>
           <textarea 
           class="form-control" 
@@ -47,3 +49,4 @@
 
     </div>
 </form>
+</div>
