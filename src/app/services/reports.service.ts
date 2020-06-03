@@ -1,16 +1,14 @@
-import { Injectable } from '@angular/core';
-import { Report } from '../models/Report'
-import { REPORTS } from '../models/Reports'
+import { Injectable } from "@angular/core";
+import { Report } from "../models/Report";
+import { REPORTS } from "../models/Reports";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root"
 })
 export class ReportService {
+  constructor () { }
 
-  constructor() { }
-
-  getReports(): Report[] {
-      return REPORTS
+  getReports (): Report[] {
+    return REPORTS;
   }
-
 }
