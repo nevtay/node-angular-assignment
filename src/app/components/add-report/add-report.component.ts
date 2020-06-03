@@ -1,47 +1,50 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { Report } from '../../models/Report'
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { Report } from "../../models/Report";
+import { NgForm } from "@angular/forms";
 
 @Component({
-  selector: 'app-add-report',
-  templateUrl: './add-report.component.html',
-  styleUrls: ['./add-report.component.css']
+  selector: "app-add-report",
+  templateUrl: "./add-report.component.html",
+  styleUrls: ["./add-report.component.css"]
 })
 export class AddReportComponent implements OnInit {
-  reportDate:string = ''
-  reportUsername:string = ''
-  reportContent:string = ''
-  reportIsApproved:boolean = false
-  reportModel = new Report(this.reportDate, this.reportUsername, this.reportContent, this.reportIsApproved)
+  reportDate:string = "";
+  reportUsername:string = "";
+  reportContent:string = "";
+  reportIsApproved:boolean = false;
+  reportModel = new Report(this.reportDate, this.reportUsername, this.reportContent, this.reportIsApproved);
 
-  constructor(
+  constructor (
     private route: ActivatedRoute
   ) { }
 
-  updateDate(value: string) {
-    this.reportDate = value
+  updateDate (value: string) {
+    this.reportDate = new Date(value).toLocaleString();
   }
 
-  updateUsername(value: string) {
-    this.reportUsername = value
+  updateUsername (value: string) {
+    this.reportUsername = value;
   }
 
-  updateContent(value: string) {
-    this.reportContent = value
+  updateContent (value: string) {
+    console.log(value.toString());
+    this.reportContent = value;
   }
 
-  submitReport(f: NgForm) {
-    console.log(this.reportModel)
+  submitReport (f: NgForm) {
+    if (!this.reportModel.date) {
+      alert("Invalid/Missing Date");
+    } else if (!this.reportModel.username) {
+      alert("Username field cannot be empty");
+    } else {
+      const allReports = JSON.parse(localStorage.getItem("reports"));
+      allReports.push(this.reportModel);
+      localStorage.setItem("reports", JSON.stringify(allReports));
+      window.location.href = "/view-reports";
+    }
   }
 
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.reportDate = params['reportDate'];
-      this.reportUsername = params['reportUsername'];
-      this.reportContent = params['reportContent'];
-      this.reportIsApproved = params['reportIsApproved'];
-    });
+  ngOnInit () {
   }
-
 }
