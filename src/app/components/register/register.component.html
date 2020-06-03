@@ -1,0 +1,45 @@
+<div class="container col-sm-10 col-md-8 p-2">
+<h1>Create New Account</h1>
+<form class="p-3" (ngSubmit)="registerAccount(newAccount)" #newAccount="ngForm">
+    <div class="form-column container-md">
+        <div class="form-group mx-auto col-sm-6 col-md-5">
+          <label for="newUsername" class="col-form-label">Create Username</label>
+          <input 
+          required
+          type="text" 
+          class="form-control" 
+          id="newUsername"
+          [(ngModel)]="newAccountModel.username"
+          (onkeyup)="updateUsername($event)"
+          name="newUsername"
+          >
+        </div>
+
+        <div class="form-group mx-auto col-sm-6 col-md-5">
+          <label for="newPassword" class="col-form-label">Create Password</label>
+          <input 
+          required
+          type="password" 
+          class="form-control" 
+          id="newPassword"
+          [(ngModel)]="newAccountModel.password"
+          (onkeyup)="updatePassword($event)"
+          name="newPassword"
+          >
+        </div>
+
+        <div class="form-group mx-auto col-sm-6 col-md-5">
+            <input 
+            type="checkbox" 
+            [(ngModel)]="newAccountModel.isAdmin"
+            (click)="setAdminStatus()"
+            name="toggleAdminStatus">
+            <label for="toggleAdminStatus" class="col-form-label m-1">Set as Admin Account</label>
+        </div>
+        
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Create Account</button>
+        </div>
+    </div>
+  </form>
+</div>
