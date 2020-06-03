@@ -21,3 +21,7 @@ summary:focus {
 summary::after {
     content: 'Read More'
 }
+
+p {
+    white-space: pre-line;
+}
