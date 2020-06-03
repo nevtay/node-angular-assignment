@@ -21,27 +21,4 @@
     </ul>
 </div>
 
-<div
-*ngIf="selectedReport" 
-class="modal fade" 
-id="selectedReportModal" 
-tabindex="-1" 
-role="dialog" 
-aria-labelledby="selected-Report-Modal" 
-aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <p>Author: <strong>{{selectedReport.username}}</strong></p>
-                <p>Added On: <strong>{{selectedReport.date}}</strong></p>
-            </div>
-            <div class="modal-body">
-                <textarea  class="w-100" [(ngModel)]="selectedReport.content" [readonly]="isReadOnly"></textarea>
-            </div>
-            <div class="modal-footer d-flex justify-content-between">
-                <button class="btn btn-secondary" (click)="toggleReportEditing()">{{isReadOnly ? "Allow Edits" : "Disable Edits"}}</button>
-                <p>Approval Status: <strong>{{ selectedReport.isApproved ? 'Approved' : 'Not Approved' }}</strong></p>
-            </div>
-        </div>
-    </div>
-</div>
+<app-report-detail [report]="selectedReport"></app-report-detail>
