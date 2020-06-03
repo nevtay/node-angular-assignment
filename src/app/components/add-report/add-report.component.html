@@ -11,11 +11,10 @@
           class="form-control" 
           id="form-date"
           [(ngModel)]="reportModel.date"
-          (onkeyup)="updateDate($event)"
-          name="formDate"
+          (change)="updateDate($event)"
+          name="reportDate"
           >
         </div>
-
         <div class="form-group mx-auto">
           <label for="formAuthor" class="col-form-label">Username</label>
           <input 
@@ -25,7 +24,7 @@
           id="form-username"
           [(ngModel)]="reportModel.username"
           (onkeyup)="updateUsername($event)"
-          name="formUsername"
+          name="reportUsername"
           >
         </div>
 
@@ -36,17 +35,14 @@
           id="form-content"
           [(ngModel)]="reportModel.content"
           (onkeyup)="updateContent($event)"
-          name="formContent"
+          name="reportContent"
           rows="7"
           placeholder="Enter Report Content..."
-          [value]="reportContent"
           ></textarea>
         </div>
-
         <div class="text-center">
             <button type="submit" class="btn btn-primary">Submit Report</button>
       </div>
-
     </div>
 </form>
 </div>
