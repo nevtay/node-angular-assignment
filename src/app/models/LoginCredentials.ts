@@ -1,6 +1,6 @@
 export class LoginCredentials {
-    constructor(
+  constructor (
         public username:string,
         public password:string
-    ) { }
+  ) { }
 }
