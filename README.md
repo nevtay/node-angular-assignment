@@ -12,7 +12,7 @@
 
 # View Reports
 
-#### There will always be one report by default. This is for convenience only (no need for user to create a new report just to see one)
+#### There will always be one report by default. This is purely for this project so that there's no need for user to create a new report just to see one
 
 1. Click on **View Reports** in the navbar
 2. Click on **Read More** to read the main content of each report
